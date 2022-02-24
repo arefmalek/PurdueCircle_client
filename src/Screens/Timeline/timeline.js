@@ -27,7 +27,7 @@ function Timeline(props) {
     if (!loaded) {
       axios({
         method: 'get',
-        url: `http://localhost:5000/api/users/getTimeline/user_id=${get_id_from_cookie()}`,
+        url: `http://purduecirc.herokuapp.com/api/users/getTimeline/user_id=${get_id_from_cookie()}`,
     }).then(res => { 
         setPosts(res.data.data)
         console.log(res.data.data);

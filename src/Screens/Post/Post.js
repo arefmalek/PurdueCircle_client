@@ -18,6 +18,8 @@ function Post(props) {
     const [reposted, setReposted] = useState(false);
     const [postId, setPostId] = useState(0); 
     const [loaded, setLoaded] = useState(false);
+    const [comment, setComment] = useState("");
+    const [comments, setComments] = useState([]);
 
 
     function get_id_from_cookie() {
@@ -70,6 +72,19 @@ function Post(props) {
             }).catch(error => {
                 console.log(error);
             });
+            axios({ 
+                method: 'get',
+                url: `http://localhost:5000/api/posts/getComments/post_id=${thisPostId}`,
+            }).then(res => {
+                console.log(res.data.data);
+                if (res.data.data != "Failed") {
+                    setComments(res.data.data);
+                    console.log(comments)
+                    console.log(res.data.data)
+                } 
+            }).catch(error => {
+                console.log(error);
+            });
 
             setLoaded(true);
             setPostId(thisPostId);
@@ -78,7 +93,7 @@ function Post(props) {
 
     function submitLike() {
         axios({ 
-            method: 'get',
+            method: 'post',
             url: `http://localhost:5000/api/posts/likePost`,
             data: {
                 user_id: authorId,
@@ -86,7 +101,9 @@ function Post(props) {
             }
         }).then(res => {
             if (res.data.data != "Failed") {
+                console.log(res.data.liked);
                 setLiked(res.data.liked);
+                console.log(liked);
             } 
         }).catch(error => {
             console.log(error);
@@ -96,7 +113,7 @@ function Post(props) {
 
     function submitRepost() {
         axios({ 
-            method: 'get',
+            method: 'post',
             url: `http://localhost:5000/api/posts/repostPost`,
             data: {
                 user_id: authorId,
@@ -113,7 +130,29 @@ function Post(props) {
     }
 
     function goToUser() {
-        navigate("/profile/" + author);
+        navigate(`/profile/${author}`);
+    }
+
+    function submitComment() {
+        axios({ 
+            method: 'post',
+            url: `http://localhost:5000/api/posts/create_comment`,
+            data: {
+                user_id: authorId,
+                post_id: postId,
+                comment: comment,
+            }
+        }).then(res => {
+            if (res.data.data != "Failed") {
+            } 
+        }).catch(error => {
+            console.log(error);
+        });
+        navigate(`/post/${postId}`)
+    }
+
+    function updateComment(e) {
+        setComment(e.target.value)
     }
     
     return (
@@ -136,7 +175,7 @@ function Post(props) {
                         <button className={styles.like} onClick={submitLike}>
                             {
                                 liked ?
-                                "Unlike" :
+                                "Liked" :
                                 "Like"
                             }
                         </button>
@@ -148,9 +187,14 @@ function Post(props) {
                             }
                         </button>
                     </div>
+                    <div className={styles.writeComment}>
+                        <textarea className={styles.commentBox} onChange={updateComment} placeholder="Write a comment..."></textarea><br></br>
+                        <button onClick={submitComment} className={styles.repost}>Comment</button>
+
+                    </div>
                     <div className={styles.comments}>
-                        {Comment.map(function(comments, index) {
-                            return (<Comment key={index} author_id={comments.user_id} author={comments.authorname} postid={comments.comment_id} text={comments.text}/>)
+                        {comments.map(function(comment, index) {
+                            return (<Comment key={index} author_id={comment.user_id} author={comment.authorname} comment={comment.comment}/>)
                         })}
                     </div>
                 </div>

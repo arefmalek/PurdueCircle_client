@@ -35,7 +35,7 @@ function Topic(props) {
         let id = get_id_from_cookie();
         axios({
             method: 'get',
-            url: `http://localhost:5000/api/users/getTopicline/topicname=${window.location.pathname.split("/")[2]}`,
+            url: `http://purduecirc.herokuapp.com/api/topics/getTopicline/topicname=${window.location.pathname.split("/")[2]}`,
         }).then(res => { 
             setPosts(res.data.data);
             console.log(res.data.data)
@@ -45,7 +45,7 @@ function Topic(props) {
         })
         axios({
             method: 'get',
-            url: `http://localhost:5000/api/users/checkFollowedTopic/user_id=${id}/topicname=${window.location.pathname.split("/")[2]}`, 
+            url: `http://purduecirc.herokuapp.com/api/topics/checkFollowedTopic/user_id=${id}/topicname=${window.location.pathname.split("/")[2]}`, 
         }).then(res => { 
             setFollowed(res.data.followed);
             console.log(res.data.data)
@@ -60,7 +60,7 @@ function followTopic() {
     let id = parseInt(get_id_from_cookie());
     axios({
         method: 'post',
-        url: `http://localhost:5000/api/users/followTopic`,
+        url: `http://purduecirc.herokuapp.com/api/users/followTopic`,
         data: {
             user_id: id,
             topicname: topicname

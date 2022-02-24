@@ -28,7 +28,7 @@ function CreatePost(props) {
     function submitPost() {
         axios({
             method: 'post',
-            url: `http://localhost:5000/api/posts/create_post`,
+            url: `http://purduecirc.herokuapp.com/api/posts/create_post`,
             data: {
                 user_id: parseInt(get_id_from_cookie()),
                 topic_name: topic_name,
@@ -41,23 +41,23 @@ function CreatePost(props) {
                 setError(true)
                 setErrorMsg(res.data.message);
             } else {
-                navigate("/profile");
+                navigate(`/profile/${get_id_from_cookie()}`);
             }
         }).catch(error => {
             console.log(error);
         })
     }
 
-    function updateTopic() {
-
+    function updateTopic(e) {
+        setTopicName(e.target.value);
     }
 
-    function updateTitle() {
-
+    function updateTitle(e) {
+        setTitle(e.target.value);
     }
 
-    function updateText() {
-
+    function updateText(e) {
+        setText(e.target.value);
     }
     
     return (

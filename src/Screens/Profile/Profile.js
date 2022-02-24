@@ -38,7 +38,7 @@ function Profile() {
             if (user_id == id) setMyPage(true);
             axios({
                 method: 'get',
-                url: `http://localhost:5000/api/users/id=${user_id}`, //TODO: don't get from cookie, get from id in the searchbar
+                url: `http://purduecirc.herokuapp.com/api/users/id=${user_id}`, //TODO: don't get from cookie, get from id in the searchbar
             }).then(res => { 
                 setUsername(res.data.username)
                 setBio(res.data.bio);
@@ -48,7 +48,7 @@ function Profile() {
             })
             axios({
                 method: 'get',
-                url: `http://localhost:5000/api/users/getUserline/user_id=${user_id}`, 
+                url: `http://purduecirc.herokuapp.com/api/users/getUserline/user_id=${user_id}`, 
             }).then(res => { 
                 setPosts(res.data.data);
                 console.log(res.data.data)
@@ -59,7 +59,7 @@ function Profile() {
             if (!myPage) {
             axios({
                 method: 'get',
-                url: `http://localhost:5000/api/users/checkFollowedUser/user_id=${id}/user_id_2=${user_id}`, 
+                url: `http://purduecirc.herokuapp.com/api/users/checkFollowedUser/user_id=${id}/user_id_2=${user_id}`, 
             }).then(res => { 
                 setFollowed(res.data.followed);
                 console.log(res.data.data)
@@ -75,7 +75,7 @@ function Profile() {
         let id = parseInt(get_id_from_cookie());
         axios({
             method: 'post',
-            url: `http://localhost:5000/api/users/followUser`,
+            url: `http://purduecirc.herokuapp.com/api/users/followUser`,
             data: {
                 user_id: id,
                 user_id_2: user_id

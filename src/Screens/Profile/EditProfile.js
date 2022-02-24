@@ -19,7 +19,7 @@ function EditProfile() {
     function submitChanges() {
         axios({
             method: 'post',
-            url: `http://localhost:5000/api/users/editProfile`,
+            url: `http://purduecirc.herokuapp.com/api/users/editProfile`,
             data: {
                 user_id: get_id_from_cookie(),
                 bio: bio
@@ -35,7 +35,7 @@ function EditProfile() {
     function deleteAccount() {
         axios({
             method: 'post',
-            url: `http://localhost:5000/api/users/deleteAccount`,
+            url: `http://purduecirc.herokuapp.com/api/users/deleteAccount`,
             data: {
                 user_id: get_id_from_cookie(),
             }
@@ -55,7 +55,7 @@ function EditProfile() {
         if (!loaded) {
             axios({
                 method: 'get',
-                url: `http://localhost:5000/api/users/id=${get_id_from_cookie()}`,
+                url: `http://purduecirc.herokuapp.com/api/users/id=${get_id_from_cookie()}`,
             }).then(res => { 
                 setBio(res.data.bio);
                 setLoaded(true);

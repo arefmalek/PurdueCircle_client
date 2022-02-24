@@ -7,7 +7,7 @@ p {
     width: 100vw;
     height: 100vh;
     background-image: linear-gradient(#CEB888, #f5e5c2);
-    position: fixed;
+    overflow-x: hidden;
   }
   
   .backgroundDesign {
@@ -15,7 +15,7 @@ p {
     height: 100vh;
     background-image: url("../Authentication/Login/login-background.png");
     background-size: cover;
-    position: fixed;
+    
   }
   
   .whiteWrapper {

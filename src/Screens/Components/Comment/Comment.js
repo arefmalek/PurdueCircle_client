@@ -11,16 +11,12 @@ function Comment(props) {
         navigate(`/profile/${props.author_id}`);
     }
 
-    function goToComment() {
-        navigate(`/post/${props.commentid}`);
-    }
-
     return (<div className={styles.goldWrapper}>
             <div className={styles.header}>
                 <a id="author" className={styles.author} onClick={goToAuthor}>{props.author}</a>
             </div>
             <div className={styles.body}>
-                <a className={styles.text} onClick={goToComment}>{props.text}</a>
+                <p className={styles.text}>{props.comment}</p>
             </div>
         </div>);
 }

@@ -7,7 +7,8 @@ p {
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(#CEB888, #f5e5c2);
-  position: fixed;
+  overflow-x: hidden;
+  z-index: -1;
 }
 
 .backgroundDesign {
@@ -15,7 +16,7 @@ p {
   height: 100vh;
   background-image: url("../Authentication/Login/login-background.png");
   background-size: cover;
-  position: fixed;
+  z-index: -1;
 }
 
 .NavBar {
@@ -36,20 +37,7 @@ p {
     box-shadow: 0px 0px 8px #6b6047; 
     text-align: center;
     padding-top: 100px;
-    z-index: 1;
-  }
-
-  .whiteWrapper {
-    width: 60vw;
-    height: 100vh;
-    position: absolute;
-    top: 0vh;
-    background-color: whitesmoke;
-    margin-left: 20vw; margin-right: 20vw;
-    border-radius:5px;
-    box-shadow: 0px 0px 8px #6b6047; 
-    text-align: center;
-    z-index: -1;
+    z-index: 0;
   }
 
   .topicTitle {
