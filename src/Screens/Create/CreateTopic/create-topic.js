@@ -32,7 +32,7 @@ function CreateTopic(props) {
         console.log(get_id_from_cookie())
         axios({
             method: 'post',
-            url: `http://localhost:5000/api/topics/create_topic`,
+            url: `http://purduecirc.herokuapp.com/api/topics/create_topic`,
             data: {
                 user_id: get_id_from_cookie(),
                 name: name,

@@ -37,7 +37,7 @@ function Post(props) {
 
             axios({ 
                 method: 'get',
-                url: `http://localhost:5000/api/posts/id=${thisPostId}`,
+                url: `http://purduecirc.herokuapp.com/api/posts/id=${thisPostId}`,
             }).then(res => {
                 if (res.data.data != "Failed") {
                     setTitle(res.data.title);
@@ -52,7 +52,7 @@ function Post(props) {
 
             axios({ 
                 method: 'get',
-                url: `http://localhost:5000/api/posts/checkLikedPost/user_id=${id}/post_id=${thisPostId}`,
+                url: `http://purduecirc.herokuapp.com/api/posts/checkLikedPost/user_id=${id}/post_id=${thisPostId}`,
             }).then(res => {
                 console.log(res.data.liked);
                 if (res.data.data != "Failed") {
@@ -64,7 +64,7 @@ function Post(props) {
 
             axios({ 
                 method: 'get',
-                url: `http://localhost:5000/api/posts/checkRepostedPost/user_id=${id}/post_id=${thisPostId}`,
+                url: `http://purduecirc.herokuapp.com/api/posts/checkRepostedPost/user_id=${id}/post_id=${thisPostId}`,
             }).then(res => {
                 if (res.data.data != "Failed") {
                     setReposted(res.data.reposted);
@@ -74,7 +74,7 @@ function Post(props) {
             });
             axios({ 
                 method: 'get',
-                url: `http://localhost:5000/api/posts/getComments/post_id=${thisPostId}`,
+                url: `http://purduecirc.herokuapp.com/api/posts/getComments/post_id=${thisPostId}`,
             }).then(res => {
                 console.log(res.data.data);
                 if (res.data.data != "Failed") {
@@ -94,7 +94,7 @@ function Post(props) {
     function submitLike() {
         axios({ 
             method: 'post',
-            url: `http://localhost:5000/api/posts/likePost`,
+            url: `http://purduecirc.herokuapp.com/api/posts/likePost`,
             data: {
                 user_id: authorId,
                 post_id: postId
@@ -114,7 +114,7 @@ function Post(props) {
     function submitRepost() {
         axios({ 
             method: 'post',
-            url: `http://localhost:5000/api/posts/repostPost`,
+            url: `http://purduecirc.herokuapp.com/api/posts/repostPost`,
             data: {
                 user_id: authorId,
                 post_id: postId
@@ -136,7 +136,7 @@ function Post(props) {
     function submitComment() {
         axios({ 
             method: 'post',
-            url: `http://localhost:5000/api/posts/create_comment`,
+            url: `http://purduecirc.herokuapp.com/api/posts/create_comment`,
             data: {
                 user_id: authorId,
                 post_id: postId,
