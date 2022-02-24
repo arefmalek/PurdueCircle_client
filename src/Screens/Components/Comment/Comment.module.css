@@ -1,0 +1,12 @@
+.comment {
+    width: 100%;
+    padding: 50px;
+    background-color: black;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+.userName {
+    font-size: 14px;
+    color: aliceblue;
+}

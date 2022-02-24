@@ -1,0 +1,33 @@
+.body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #373A36;
+}
+
+.backgroundBox {
+    width: 70vw;
+    height: 100vh;
+    background-color: #F2F2F2;
+}
+  
+.topnav {
+    width: 100vw;
+    height: 7vh;
+    background-color: #CEB888;
+  }
+  
+  .topbuttons {
+    height: 7vh;
+    text-decoration: none;
+    font-size: 4vh;
+    font-weight: bold;
+    color: white;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    float: right;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }

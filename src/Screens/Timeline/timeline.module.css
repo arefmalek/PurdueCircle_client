@@ -1,0 +1,44 @@
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(#CEB888, #f5e5c2);
+    position: relative;
+    margin: 0%;
+    padding: 0%;
+  }
+  
+  .backgroundDesign {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("login-background.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .NavBar {
+    position: absolute;
+    top: 0;
+    z-index: 5;
+}
+
+.whiteWrapper {
+    width: 60vw;
+    height: 100vh;
+    position: absolute;
+    top: 0vh;
+    background-color: whitesmoke;
+    margin-left: 20vw; 
+    margin-right: 20vw;
+    border-radius:5px;
+    box-shadow: 0px 0px 8px #6b6047; 
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  .timelineTitle {
+      font-size: 50px;
+      font-weight: bold;
+  }

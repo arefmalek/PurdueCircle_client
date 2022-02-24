@@ -1,0 +1,95 @@
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(#CEB888, #f5e5c2);
+  position: relative;
+}
+
+.errorBox {
+  margin-top: 25px;
+  background-color: white;
+  width: 250px;
+  height: 20px;
+  border-radius:5px;
+  box-shadow: 0px 0px 8px #6b6047; 
+  text-align: center;
+  padding: 20px;
+  align-items: center;
+}
+
+.backgroundDesign {
+width: 100vw;
+height: 100vh;
+background-image: url("login-background.png");
+background-size: cover;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.signupBox {
+background-color: white;
+width: 250px;
+height: 350px;
+border-radius:5px;
+box-shadow: 0px 0px 8px #6b6047; 
+text-align: center;
+padding: 20px;
+}
+
+.signupText {
+margin-top: 10px;
+font-size:3em;
+}
+
+.signupTextBox {
+background-color: #e8e5df;
+border: none;
+outline: none;
+width: 75%;
+height: 8%;
+padding-left: 15px;
+margin-top: 10px;
+}
+
+.signupSubmit {
+background-color: #e8e5df;
+margin-top: 30px;
+border-radius:15px;
+width: 130px;
+height: 30px;
+border: none;
+outline: none;
+transition: background-color 200ms;
+}
+
+.signupSubmit:hover {
+background-color:#CEB888;
+cursor: pointer;
+}
+
+.hasAccountText {
+margin-top: 12%;
+font-size: 15px;
+}
+
+.forgotPasswordText {
+margin-top: 5px;
+font-size: 10px;
+}
+
+.loginLink {
+font-weight: bold;
+cursor: pointer;
+color: black;
+text-decoration: none;
+}
+
+.loginLink:hover {
+text-decoration: underline;
+}
+
+.invalidText {
+  color: red;
+}

@@ -1,0 +1,114 @@
+p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(#CEB888, #f5e5c2);
+  position: fixed;
+}
+
+.backgroundDesign {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../Authentication/Login/login-background.png");
+  background-size: cover;
+  position: fixed;
+}
+
+.whiteWrapper {
+  width: 60vw;
+  height: 100vh;
+  position: absolute;
+  top: 0vh;
+  background-color: whitesmoke;
+  margin-left: 20vw; margin-right: 20vw;
+  border-radius:5px;
+  box-shadow: 0px 0px 8px #6b6047; 
+  text-align: center;
+  z-index: -1;
+}
+
+.userWrapper {
+  /* display: flex;
+  flex-direction: row; */
+  padding-top: 7vh;
+  min-height: 25vh;
+  margin-right: 5vw;
+  margin-left: 5vw;
+  border-bottom: 1px solid #CEB888;
+}
+
+.profilePictureWrapper {
+  padding-top: 5vh;
+}
+
+.profilePicture {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userHeader {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3vw;
+  justify-content: center;
+}
+
+.username {
+  margin-bottom: 0vw;
+  margin-right: 3vw;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.followCount {
+  padding-top: 15px;
+}
+.poplinks {
+  padding-right: 2vw;
+  font-size: 15px;
+}
+
+.bioContainer {
+  word-wrap: break-word;
+}
+
+.bio {
+  font-size: 15px;
+  padding-top: 1vw;
+  padding-left: 2vw;
+  padding-right: 1vw;
+  margin-bottom: 3vw;
+}
+
+.editProfileButton {
+  background-color: #e8e5df;
+  border-radius: 3px;
+  width: 100px;
+  height: 30px;
+  margin-right: 20px;
+  border: none;
+  outline: none;
+  transition: background-color 200ms;
+}
+
+.editProfileButton:hover {
+  background-color:#CEB888;
+  cursor: pointer;
+}
+
+.smallPosts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

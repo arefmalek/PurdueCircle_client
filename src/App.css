@@ -1,0 +1,77 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #373A36;
+}
+
+.topnav {
+  width: 100vw;
+  height: 7vh;
+  background-color: #CEB888;
+}
+
+.topbuttons {
+  height: 7vh;
+  text-decoration: none;
+  font-size: 4vh;
+  font-weight: bold;
+  color: white;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  float: right;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+h1 {
+  font-size: 12vh;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.peteIcon{
+  text-align: center;
+}
+
+.App-header {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #ffffff;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
